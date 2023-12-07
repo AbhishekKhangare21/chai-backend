@@ -1,13 +1,13 @@
 // this is wrapper function
 
 // #1 - using promises
-// const asyncHandler = (requestHandler) => {
-//   (req, res, next) => {
-//     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err)); //use chatgpt to understand this code
-//   };
-// };
+const asyncHandler = (requestHandler) => {
+  return (req, res, next) => {
+    Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err)); //use chatgpt to understand this code
+  };
+};
 
-// export { asyncHandler };
+export { asyncHandler };
 
 // #2 - using trycatch
 
